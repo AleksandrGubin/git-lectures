@@ -1,0 +1,52 @@
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{tikz}
+\usetikzlibrary{graphs}
+
+\newcount\upbranchY
+\newcount\middlebranchY
+\newcount\downbranchY
+\newcount\xfactor
+
+\global\upbranchY 1\relax
+\global\middlebranchY 0\relax
+\global\downbranchY -1\relax
+\global\xfactor 2\relax
+
+\begin{document}
+\begin{tikzpicture}[xscale=2]
+    \graph[
+        grow right=2cm,
+        no placement,
+        nodes={
+            minimum width=1,
+            inner sep=2mm,
+            shape=rectangle,
+            fill=blue!18,
+            draw,
+            line width=1pt,
+            rounded corners
+        },
+        edges={thick,>=stealth,line width=1pt}
+    ]
+    {
+        98ca9[x=0,y=\middlebranchY] <- 34ac2[x=1,y=\middlebranchY,line width=2pt] <-
+        {
+            dedb6[x=2,y=\upbranchY] <- 10056[x=3,y=\upbranchY] <-
+            3fb00[x=4,y=\middlebranchY,draw=red,line width=2pt],
+            f30ab[x=2,y=\middlebranchY] <-
+            c7cd3[x=3,y=\middlebranchY] <-
+            3fb00[x=4,y=\middlebranchY] <-
+            5873e[x=5,y=\middlebranchY] <- master[x=5,y=1,fill=green!20,rounded
+            corners=0] <- HEAD[x=6,y=1,fill=black!20,rounded corners=0,dashed],
+            d7783[x=2,y=\downbranchY] <- fe4c8[x=3,y=\downbranchY] <- 317d4[x=4,y=\downbranchY] <-
+            1f220[x=5,y=\downbranchY] <- maint[x=5,y=-2,fill=green!20,rounded
+            corners=0],
+            v01[x=1,y=-2,fill=yellow!20,rounded corners=0]
+        }
+    };
+\end{tikzpicture}
+\end{document}
