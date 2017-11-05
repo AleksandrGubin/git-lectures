@@ -1,0 +1,42 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{tikz}
+\usetikzlibrary{graphs}
+
+\begin{document}
+\begin{tikzpicture}[xscale=2]
+    \graph[
+        grow right=2cm,
+        no placement,
+        nodes={
+            minimum width=1,
+            inner sep=2mm,
+            shape=rectangle,
+            fill=blue!18,
+            draw=blue!50,
+            line width=1pt,
+            rounded corners
+        },
+        edges={thick,>=stealth,line width=1pt}
+    ]
+    {
+        98ca9[x=0,y=0] <- 34ac2[x=1,y=0] <-
+        {
+            dedb6[x=2,y=1,draw] <- 10056[x=3,y=1] <-
+            3fb00[x=4,y=0,draw=red],
+            f30ab[x=2,y=0] <-
+            c7cd3[x=3,y=0] <-
+            3fb00[x=4,y=0] <-
+            5873e[x=5,y=0] <- master[x=5,y=1,fill=green!20,draw=green!50,rounded
+            corners=0] <- HEAD[x=6,y=1,fill=black!20,draw=black,rounded corners=0],
+            d7783[x=2,y=-1] <- fe4c8[x=3,y=-1] <- 317d4[x=4,y=-1] <-
+            1f220[x=5,y=-1] <- maint[x=5,y=-2,fill=green!20,draw=green!50,rounded
+            corners=0],
+            ver01[x=1,y=-2,fill=yellow!20,draw=yellow!50,rounded corners=0]
+        }
+    };
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,15 @@
+\begin{frame}
+	\frametitle{Ориентированный граф без циклов}
+	
+	\framesubtitle{Представление нелинейной истории}
+    \begin{tikzpicture}[new set=import nodes]
+        \begin{scope}[nodes={set=import nodes}]
+            \node [fill=green!50] (a) at (0, 0) {\textbf{root}};
+            \node [fill=red!50] (b) at (1, 0) {\textbf{leaf}};
+        \end{scope}
+        \graph {
+            (import nodes);
+            a -> b;
+        };
+    \end{tikzpicture}
+\end{frame}

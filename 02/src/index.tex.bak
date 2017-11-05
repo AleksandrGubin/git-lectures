@@ -1,0 +1,8 @@
+\documentclass[a4paper, aspectratio=169]{beamer}
+\usepackage{sty/git-presentation}
+\usetheme{Singapore}
+\begin{document}
+	\include{00}
+	\include{01}
+	\include{02}
+\end{document}
